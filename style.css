@@ -10,6 +10,7 @@ body {
   width: 60vw;
   display: grid;
   grid-template-columns: repeat(3, 20vw);
+  grid-template-rows: repeat(3, 30vh);
   gap: 2px;
 }
 .grid-item {
