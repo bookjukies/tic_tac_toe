@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+}
+.board {
+  height: 90vh;
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(3, 20vw);
+  gap: 2px;
+}
+.grid-item {
+  background-color: midnightblue;
+}
