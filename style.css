@@ -16,3 +16,13 @@ body {
 .grid-item {
   background-color: midnightblue;
 }
+
+.grid-item p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 12rem;
+}
