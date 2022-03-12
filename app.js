@@ -2,7 +2,7 @@ const squares = document.querySelectorAll(`.grid-item`)
 const restart = document.querySelector(`.restart`)
 const turn = document.querySelector(`.turn`)
 let player = `O`
-
+let play = true
 let turnHandle = 0
 let row1 = []
 let row2 = []
@@ -17,7 +17,9 @@ function resultCheck(player){
     const checker = [row1 ,row2 ,row3 ,col1 ,col2 ,col3 ,leftDi ,rightDi]
     checker.forEach((a)=>{
         if (a.length == 3 && a.every(item => item === a[0])){
-            turn.innerHTML =`${player} WINS!!!`
+            turn.innerHTML =`${player} WINS!!`
+            play = false
+
         }else{
             if (turnHandle ==9){
                 turn.innerHTML =`!!DRAW!!`
@@ -80,7 +82,7 @@ function symbol(square){
     }
 }
 
-
+    if(play){
     if(square.innerHTML){
         alert(`Square is taken !!! click empty square`)
     }else{
@@ -102,10 +104,12 @@ function symbol(square){
         } 
     }  
 }
+}
 
 squares.forEach((square)=>{
     square.addEventListener(`click`,()=>{
         symbol(square)
+       
     })
 })
 
