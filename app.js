@@ -17,10 +17,10 @@ function resultCheck(player){
     const checker = [row1 ,row2 ,row3 ,col1 ,col2 ,col3 ,leftDi ,rightDi]
     checker.forEach((a)=>{
         if (a.length == 3 && a.every(item => item === a[0])){
-            console.log(`${player} wins`)
+            turn.innerHTML =`${player} wins`
         }else{
             if (turnHandle ==9){
-                console.log(`draw`)
+                turn.innerHTML =`${player} wins`
             }
         }  
     })
@@ -87,11 +87,15 @@ function symbol(square){
         turnHandle++
         if (turnHandle%2 == 0){
             player = `X`
+            let marker = `O`
+            turn.innerHTML = `Player ${marker} to move`
             square.innerHTML = `<p>${player}</p>` 
             logger()
             resultCheck(player)
         }else{
             player = `O`
+            let marker = `X`
+            turn.innerHTML = `Player ${marker} to move`
             square.innerHTML = `<p>${player}</p>`
            logger()
            resultCheck(player)
@@ -106,4 +110,3 @@ squares.forEach((square)=>{
 })
 
 restart.addEventListener(`click`,()=>{location.reload()})
-turn.innerHTML = `${player} to move`
