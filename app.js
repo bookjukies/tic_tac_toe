@@ -1,4 +1,8 @@
 const squares = document.querySelectorAll(`.grid-item`)
+const restart = document.querySelector(`.restart`)
+const turn = document.querySelector(`.turn`)
+let player = `O`
+
 let turnHandle = 0
 let row1 = []
 let row2 = []
@@ -14,6 +18,10 @@ function resultCheck(player){
     checker.forEach((a)=>{
         if (a.length == 3 && a.every(item => item === a[0])){
             console.log(`${player} wins`)
+        }else{
+            if (turnHandle ==9){
+                console.log(`draw`)
+            }
         }  
     })
 }
@@ -71,7 +79,7 @@ function symbol(square){
             break; 
     }
 }
-    let player = `x`
+
 
     if(square.innerHTML){
         alert(`Square is taken !!! click empty square`)
@@ -97,3 +105,5 @@ squares.forEach((square)=>{
     })
 })
 
+restart.addEventListener(`click`,()=>{location.reload()})
+turn.innerHTML = `${player} to move`
