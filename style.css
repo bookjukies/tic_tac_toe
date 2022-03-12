@@ -2,15 +2,15 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin-top: 5vh;
 }
 .board {
-  height: 90vh;
+  height: 87vh;
   width: 60vw;
   display: grid;
   grid-template-columns: repeat(3, 20vw);
-  grid-template-rows: repeat(3, 30vh);
+  grid-template-rows: repeat(3, 27vh);
   gap: 2px;
 }
 .grid-item {
@@ -25,4 +25,30 @@ body {
   padding: 0;
   color: white;
   font-size: 12rem;
+}
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.container-board {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+.contains-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+}
+.restart {
+  width: 20vw;
+  height: 5vh;
+  background-color: midnightblue;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
 }

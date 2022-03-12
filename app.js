@@ -17,10 +17,10 @@ function resultCheck(player){
     const checker = [row1 ,row2 ,row3 ,col1 ,col2 ,col3 ,leftDi ,rightDi]
     checker.forEach((a)=>{
         if (a.length == 3 && a.every(item => item === a[0])){
-            turn.innerHTML =`${player} wins`
+            turn.innerHTML =`${player} WINS!!!`
         }else{
             if (turnHandle ==9){
-                turn.innerHTML =`${player} wins`
+                turn.innerHTML =`!!DRAW!!`
             }
         }  
     })
@@ -88,14 +88,14 @@ function symbol(square){
         if (turnHandle%2 == 0){
             player = `X`
             let marker = `O`
-            turn.innerHTML = `Player ${marker} to move`
+            turn.innerHTML = `PLAYER ${marker} TO MOVE`
             square.innerHTML = `<p>${player}</p>` 
             logger()
             resultCheck(player)
         }else{
             player = `O`
             let marker = `X`
-            turn.innerHTML = `Player ${marker} to move`
+            turn.innerHTML = `PLAYER ${marker} TO MOVE`
             square.innerHTML = `<p>${player}</p>`
            logger()
            resultCheck(player)
